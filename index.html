@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .element
+        {
+            margin:0%;
+            padding:0%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #060c21 ;
+            background-color: black;
+        }
+
+       .content
+       {
+        margin-left: 30px;
+        padding-right: 20px;
+        text-align: right;
+        color: #89ff00;
+        padding-left: 30%;
+       }
+       
+        .box
+        {
+            position:relative;
+            width: 800px;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #060c21;
+        }
+        .box:before
+        {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: #fff;
+            z-index: -1;
+        }
+        .box:after
+        {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: #fff;
+            z-index: -2;
+            filter:blur(40px);
+        }
+        .box:before,
+        .box:after 
+        {
+          background: linear-gradient(235deg,#89ff00,#060c21,#00bcd4);
+        }
+    </style>
+</head>
+<body class="element">
+       <div class="box">
+       <div class="content"div>
+      
+        <h1>KALINGA INSTITUTE OF INDUSTRIAL TECHNOLOGY</h1>
+    </div>
+    </div>
+    </body>
+</html>
