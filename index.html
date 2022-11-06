@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            background: #060c21 ;
+            color: aliceblue;
+        }
+        body{
+            margin:10%;
+            margin-top:3%;
+        }
+        .box{
+            width:43%;
+            height:11%;
+            display:flex;
+            margin-left: auto;
+            margin-right:auto;
+            border-style:solid;
+        }
+        h1{
+            margin-left:7%;
+        }
+       button{
+        height:25%;
+        width:35%;
+        box-shadow: 20px 20px 20px rgba(0,0,0,0.5);
+        background-color: rgba(255,255,255,0.1);
+        overflow:hidden;
+        border-top: 1px solid rgba(255,255,255,0.5);
+        backdrop-filter:blur(5px);
+        transition:0.5s;
+        transform:translateY(60px);
+        opacity:2;
+        font-size:2em;
+       }
+       button:hover{
+        transform:translateY(0px);
+        opacity:3;
+       }
+       #authority{
+        position :absolute;
+        top:35%;
+        left:3%;
+        border-radius:0px 50px 50px 0px;
+        border-right: 1px solid rgba(255,255,255,0.5);
+        background-image:linear-gradient(to right,#060c21,rgba(255,255,255,0.1));
+       }
+       #student{
+        position:absolute;
+        top:50%;
+        right:3%;
+        float:right;
+        border-radius:50px 0px 0px 50px;
+        border-left: 1px solid rgba(255,255,255,0.5);
+        background-image:linear-gradient(to right,rgba(255,255,255,0.1),#060c21);
+        }
+        #back{
+            float:left;
+            border-radius:50%;
+            width:6%;
+            height:4.5%;
+            position:absolute;
+            top:84%;
+            right:3%;
+            font-size:1.3em;
+        }
+        #logo{
+              width:150px;
+              height:150px;
+        }
+
+        .content
+        {
+            background: #060c21;
+        }
+        .content:before
+        {
+            background: #fff;
+            z-index: -1;
+        }
+        .content:after
+        {
+            background: #fff;
+            z-index: -2;
+            filter:blur(40px);
+        }
+        .box:before,
+        .box:after 
+        {
+          background: linear-gradient(235deg,#ff4400,#060c21,#ff4d01);
+        }
+
+    </style>
+</head>
+<body>  
+    <div class="content">
+        <div class="box">
+        <div class><img id="logo" src="kiit logo.jpg"></div>
+        <h1>KALINGA INSTITUTE OF INDUSTRIAL TECHNOLOGY</h1>
+        </div>
+    </div>
+ <button id="authority" class="button" onclick="myFunction2()">Authority</button>
+ <button id="student" class="button" onclick="myFunction()">Student</button>
+ <button id="back" class="button" onclick="myFunction3()">Refresh</button>
+ <div id="pop">
+ <p class="prompt" id="bro"></p>
+ <p class="prompt" id="dance"></p>
+ </div>
+ <script>
+     let n;
+     let x;
+     let y;
+ function myFunction2(){
+     let p=prompt("Enter your password:");
+     let g= p.localeCompare("KIIT239");
+     if(g==0)
+     {
+     n=prompt("Enter the size of the classroom:");
+     x=prompt("Enter no. of benches in each classroom:");
+     y=prompt("Enter the starting roll no.");
+     }
+     else{
+        let a = document.getElementById("bro")
+     a.innerHTML="You are not authorized to set values";   
+     a.style.width="33%";
+     a.style.height="10%";
+     a.style.position="absolute";
+     a.style.top="65%";
+     a.style.left="3%";
+     a.style.textAlign="center";
+     a.style.borderStyle="solid";
+     a.style.borderRadius="50px";
+     a.style.backgroundColor= "rgba(255,255,255,0.1)";
+    a.style.borderTop= "1px solid rgba(255,255,255,0.5)";
+
+     }
+ }
+ function myFunction() {
+ if(n != null && x != null && y != null)
+ {
+   let c=n*x;
+   let num= prompt("If you are the student please enter your roll no.: ");
+   let z=num-y;
+   if(z>0 && z<=(c+1))
+   {
+     let d=Math.ceil(z/x);
+     document.getElementById("bro").innerHTML="The Classroom where you have to go: " + d;
+     let pos=z-(d-1)*x;
+     document.getElementById("dance").innerHTML="The Bench where you have to go: " + pos;
+     let b = document.getElementById("pop").style;
+     b.width="33%";
+     b.height="10%";
+     b.position="absolute";
+     b.top="65%";
+     b.left="3%";
+     b.borderStyle="solid";
+     b.borderRadius="0px 50px 50px 0px";
+     b.textAlign="center";
+     b.borderStyle="solid";
+    b.borderRadius="50px";
+     b.backgroundColor= "rgba(255,255,255,0.1)";
+    b.borderTop= "1px solid rgba(255,255,255,0.5)";
+
+   }
+   else{
+     document.getElementById("bro").innerHTML=num+ " is not a valid roll no.";
+     let a = document.getElementById("bro");
+     a.style.width="33%";
+     a.style.height="10%";
+     a.style.position="absolute";
+     a.style.top="65%";
+     a.style.left="3%";
+     a.style.borderStyle="solid";
+     a.style.borderRadius="50px";
+     a.style.textAlign="center";
+     a.style.borderStyle="solid";
+     a.style.borderRadius="50px";
+     a.style.backgroundColor= "rgba(255,255,255,0.1)";
+    a.style.borderTop= "1px solid rgba(255,255,255,0.5)";
+
+     document.getElementById("dance").innerHTML="";
+   }
+ }
+ else{
+     document.getElementById("bro").innerHTML="Please enter the values in authority first";
+     let a = document.getElementById("bro");
+     a.style.width="33%";
+     a.style.height="10%";
+     a.style.position="absolute";
+     a.style.top="65%";
+     a.style.left="3%";
+     a.style.borderStyle="solid";
+     a.style.borderRadius="50px";
+     a.style.textAlign="center";
+     a.style.borderStyle="solid";
+     a.style.borderRadius="50px";
+     a.style.backgroundColor= "rgba(255,255,255,0.1)";
+    a.style.borderTop= "1px solid rgba(255,255,255,0.5)";
+
+     document.getElementById("dance").innerHTML="";
+ }
+ }
+ function myFunction3()
+ {
+    let p=prompt("Enter your password:");
+     let g= p.localeCompare("KIIT239");
+     if(g==0)
+     {
+            window.open(
+            "index.html", "_blank");
+     }
+     else
+     {
+     let a = document.getElementById("bro");
+     a.innerHTML="You are not authorized to set values";   
+     a.style.width="33%";
+     a.style.height="10%";
+     a.style.paddingTop="20px";
+     a.style.position="absolute";
+     a.style.top="65%";
+     a.style.left="3%";
+     a.style.textAlign="center";
+     a.style.borderStyle="solid";
+     a.style.borderRadius="50px";
+     a.style.backgroundColor= "rgba(255,255,255,0.1)";
+    a.style.borderTop= "1px solid rgba(255,255,255,0.5)";
+
+     }
+ }
+ </script> 
+ <script type="text/javascript" src="vanilla-tilt.js"></script>
+ <script>VanillaTilt.init(document.querySelectorAll(".button"), {
+    max: 25,
+    speed: 400,
+    //glare: true,
+    //"max-glare":1,
+});</script>
+</body>
+</html>
