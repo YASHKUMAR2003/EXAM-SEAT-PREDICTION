@@ -1,9 +1,9 @@
 # Devsprint_TeamZero
-    1.Gargee Bhowmick(Gargee-Bhowmick)
-    2.Gourav Chaki(GouravChaki)
-    3.Anusuya Deb(Anusuya-Deb)
-    4.Yash Kumar(YASHKUMAR2003)
-    5.Vaibhav Kumar Bhardwaj(vb538995)
+    1.Gargee Bhowmick(Gargee-Bhowmick): Front-end(HTML,CSS) and Back-end (Js)
+    2.Gourav Chaki(GouravChaki): Front-end(HTML,CSS) and Back-end (Js)
+    3.Anusuya Deb(Anusuya-Deb): Front-end (HTML,CSS)
+    4.Yash Kumar(YASHKUMAR2003): PPT
+    5.Vaibhav Kumar Bhardwaj(vb538995): Pictures
     
     TRACK: Student Community
     Problem Statement:
